@@ -1,6 +1,6 @@
 class Admin::RestaurantsController < ApplicationController
 
-  before_action :set_restaurant, only: [:show, :edit, :update]
+  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :authenticate_admin
 
@@ -37,6 +37,12 @@ class Admin::RestaurantsController < ApplicationController
       flash[:alert] = "Restaurant was failed to create"
       render :edit
     end
+  end
+
+  def destroy
+    @restaurant.destroy
+    redirect_to admin_restaurants_path
+    flash[:alert] = "Restaurant was deleted"
   end
   
 
