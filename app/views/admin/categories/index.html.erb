@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  
+  <h1>餐廳分類總表</h1>
+
+  <div><%= link_to "Restaurant", admin_restaurants_path, class: "btn btn-info" %></div>
+
+  <br>
+  
+  <div class="row">
+    
+    <div class="col-md-12">
+      
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Category Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><%= category.id %></td>
+              <td><%= category.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+    </div>
+  
+  </div>
+
+</div>
