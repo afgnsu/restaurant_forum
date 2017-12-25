@@ -30,7 +30,7 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def update
-    if @restaurant = Restaurant.update(restaurant_params)
+    if @restaurant.update(restaurant_params)
       flash[:notice] = "Restaurant was successfully updated"
       redirect_to admin_restaurants_path(@restaurant)
     else
@@ -53,7 +53,7 @@ class Admin::RestaurantsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :tel, :address, :opening_hours, :description, :image)
+    params.require(:restaurant).permit(:name, :tel, :address, :opening_hours, :description, :image, :category_id)
   end
 
 
