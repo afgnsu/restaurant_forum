@@ -2,7 +2,18 @@
   
   <h1>餐廳分類總表</h1>
 
-  <div><%= link_to "Restaurant", admin_restaurants_path, class: "btn btn-info" %></div>
+  <div><%= link_to "Restaurant", admin_restaurants_path, class: "btn btn-default" %></div>
+
+  <br>
+
+  <div class="form-inline">
+    <%= form_for [:admin, @category] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Category Name", class: "form-control" %>
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 
   <br>
   

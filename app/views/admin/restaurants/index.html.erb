@@ -6,7 +6,7 @@
     
     <div class="col-md-12">
 
-      <div><%= link_to "Category", admin_categories_path, class: "btn btn-info" %></div>
+      <div><%= link_to "Category", admin_categories_path, class: "btn btn-default" %></div>
 
       <br>
 
@@ -27,7 +27,7 @@
           <tbody>
             <% @restaurants.each do |restaurant| %>
               <tr>
-                <th scope="row"><%= restaurant.id %></td>
+                <th scope="row"><%= restaurant.id %></th>
                 <td>[<%= restaurant.category.name %>]</td>
                 <td><%= restaurant.name %></td>
                 <td>
