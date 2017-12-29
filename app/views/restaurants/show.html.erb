@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12">
+      <h1><%= @restaurant.name %></h1>
+      <p class="label label-default">
+        <%= @restaurant.category.name %>
+      </p>
+    </div>
+
+    <br>
+    
+    <div class="col-md-4">
+      <img src="https://api.fnkr.net/testimg/640x360/00CED1/FFF/?text=food", class= "img-responsive center-block"><br>
+      <div class="well">
+        <ul class="list-unstyled">
+          <li><strong>Opening Hour:</strong> <%= @restaurant.opening_hours %></li>
+          <li><strong>Tel:</strong> <%= @restaurant.tel %></li>
+          <li><strong>Address:</strong> <%= @restaurant.address %></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-md-8">
+      <%= simple_format @restaurant.description %>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <hr>
+
+  </div>
+</div>
