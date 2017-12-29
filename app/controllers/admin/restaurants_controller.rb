@@ -32,7 +32,7 @@ class Admin::RestaurantsController < Admin::BaseController
       flash[:notice] = "Restaurant was successfully updated"
       redirect_to admin_restaurants_path(@restaurant)
     else
-      flash[:alert] = "Restaurant was failed to create"
+      flash[:alert] = "Restaurant was failed to udpate"
       render :edit
     end
   end
