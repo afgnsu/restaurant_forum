@@ -3,20 +3,20 @@
     
     <div class="col-md-12">
       <h1><%= @restaurant.name %></h1>
-      <p class="label label-default">
-        <%= @restaurant.category.name %>
-      </p>
+      <p class="badge"><%= @restaurant.category.name %></p>
     </div>
-
-    <br>
     
     <div class="col-md-4">
-      <img src="https://api.fnkr.net/testimg/640x360/00CED1/FFF/?text=food", class= "img-responsive center-block"><br>
+      <% if @restaurant.image? %>
+        <%= image_tag @restaurant.image %>
+      <% else %>
+        <img src="https://api.fnkr.net/testimg/640x360/00CED1/FFF/?text=food", class= "img-responsive center-block"><br>
+      <% end %>
       <div class="well">
         <ul class="list-unstyled">
-          <li><strong>Opening Hour:</strong> <%= @restaurant.opening_hours %></li>
-          <li><strong>Tel:</strong> <%= @restaurant.tel %></li>
-          <li><strong>Address:</strong> <%= @restaurant.address %></li>
+          <li><strong>Opening Hour: </strong> <%= @restaurant.opening_hours %></li>
+          <li><strong>Tel: </strong> <%= @restaurant.tel %></li>
+          <li><strong>Address: </strong> <%= @restaurant.address %></li>
         </ul>
       </div>
     </div>
