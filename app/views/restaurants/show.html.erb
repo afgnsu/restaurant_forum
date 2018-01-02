@@ -8,10 +8,11 @@
     
     <div class="col-md-4">
       <% if @restaurant.image? %>
-        <%= image_tag @restaurant.image %>
+        <%= image_tag @restaurant.image, class: "img-responsive center-block" %>
       <% else %>
-        <img src="https://api.fnkr.net/testimg/640x360/00CED1/FFF/?text=food", class= "img-responsive center-block"><br>
+        <img src="https://api.fnkr.net/testimg/640x360/00CED1/FFF/?text=food", class= "img-responsive center-block">
       <% end %>
+      <br>
       <div class="well">
         <ul class="list-unstyled">
           <li><strong>Opening Hour: </strong> <%= @restaurant.opening_hours %></li>
@@ -29,5 +30,20 @@
 
     <hr>
 
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= form_for [@restaurant, @comment] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, placeholder: "留給言吧", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class: "btn btn-primary" %>
+        <%= f.button "Cancel", type: :reset, class: "btn btn-default" %>
+      </div>
+    <% end %>
   </div>
 </div>
