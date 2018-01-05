@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://api.fnkr.net/testimg/400x300/00CED1/FFF/?text=avatar">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>User Name</h2>
+      <p><strong><%= current_user.email %></strong></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, a!</p>
+      <%= link_to "編輯資料", edit_user_path(@user) %>
+    </div>
+  </div>
+</div>

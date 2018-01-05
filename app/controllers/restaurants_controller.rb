@@ -10,4 +10,6 @@ class RestaurantsController < ApplicationController
     @comment = Comment.new
   end
 
+
+
 end
