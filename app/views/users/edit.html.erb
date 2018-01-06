@@ -1,1 +1,38 @@
-<h1>編輯頁面</h1>
+<div class="container">
+
+  <h2>個人資料編輯</h2>
+
+  <br>
+  
+  <%= simple_form_for @user do |f| %>
+
+    <div class="form-group">
+      <%= f.input :name, label: '名稱', class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= f.input :intro, label: '自我介紹', class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <% if @user.avatar? %>
+        <%= image_tag @user.avatar, width: "100px" %>
+      <% else %>
+        <img src="https://api.fnkr.net/testimg/100x100/00CED1/FFF/?text=avatar">
+      <% end %>
+
+      <br><br>
+
+      <%= f.simple_fields_for :users do |c| %>
+        <%= f.input :avatar, label: '大頭照上傳', as: :file %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit '更新資料', class: "btn btn-primary" %>
+      <%= link_to "取消", user_path(@user), class: "btn btn-default" %>
+    </div>
+    
+  <% end %>
+
+</div>
