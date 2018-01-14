@@ -9,7 +9,7 @@ namespace :dev do
         opening_hours: FFaker::Time.datetime,
         tel: FFaker::PhoneNumber.short_phone_number,
         address: FFaker::Address.street_address,
-        description: FFaker::Lorem.paragraph,
+        description: FFaker::LoremCN.paragraph,
         category: Category.all.sample
       )
     end
@@ -24,6 +24,7 @@ namespace :dev do
       User.create!(
         name: user_name,
         email: "#{user_name}@mail.com",
+        intro: FFaker::LoremCN.paragraph,
         password: "12345678"
         )
     end
@@ -31,13 +32,12 @@ namespace :dev do
   end
 
   desc "Fake Comment"
-
   task fake_comment: :environment do
     Restaurant.all.each do |restaurant|
       3.times do |i|
         restaurant.comments.create!(
           content: FFaker::LoremCN.sentence,
-          user: User.all.sample
+          user: User.all[rand(2..21)]
           )
       end
     end
