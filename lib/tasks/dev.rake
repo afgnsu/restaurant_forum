@@ -37,7 +37,7 @@ namespace :dev do
       3.times do |i|
         restaurant.comments.create!(
           content: FFaker::LoremCN.sentence,
-          user: User.all[rand(2..21)]
+          user: User.all.drop(1).shuffle.first
           )
       end
     end
