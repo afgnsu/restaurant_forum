@@ -14,7 +14,7 @@
           <% @recent_restaurants.each do |restaurant| %>
             <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
             <p><%= restaurant.category.name %></p>
-            <p><%= restaurant.description %></p>
+            <p><%= truncate(restaurant.description, length: 80) %></p>
             <hr>
           <% end %>
         </div>
