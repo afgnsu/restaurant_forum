@@ -16,7 +16,7 @@
     <div class="container">
       <%= render "shared/navbar" %>
       
-      <%= render "shared/tab" %>
+      <%= render "shared/tab" unless "admin/restaurant" %>
 
       <%= yield %>
     </div>
