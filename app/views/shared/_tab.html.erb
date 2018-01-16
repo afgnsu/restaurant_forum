@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+  <li role="presentation">
+    <% if current_page?(action: 'index') %>
+      <%= active_link_to "首頁", root_path, wrap_tag: :li %>
+    <% else %>
+      <%= link_to "首頁", root_path %>
+    <% end %>
+  </li>
+  <li role="presentation">
+    <% if current_page?(action: 'feeds') %>
+      <%= active_link_to "最新動態", feeds_restaurants_path, wrap_tag: :li %>
+    <% else %>
+      <%= link_to "最新動態", feeds_restaurants_path %>
+    <% end %>
+  </li>
+</ul>
