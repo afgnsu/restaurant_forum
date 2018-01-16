@@ -16,14 +16,7 @@
     <div class="container">
       <%= render "shared/navbar" %>
       
-    <ul class="nav nav-tabs">
-      <li role="presentation">
-        <%= active_link_to "首頁", root_path, wrap_tag: :li %>
-      </li>
-      <li role="presentation">
-        <%= active_link_to "最新動態", feeds_restaurants_path, wrap_tag: :li %>
-      </li>
-    </ul>
+      <%= render "shared/nav-tabs" %>
 
       <%= yield %>
     </div>
