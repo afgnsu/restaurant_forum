@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:index, :show] do
 
+    resources :comments, only: [:create, :destroy]
+    
     collection do
       get :feeds  
     end
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
       get :dashboard
     end
 
-    resources :comments, only: [:create, :destroy]
   end
 
   resources :categories, only: :show
