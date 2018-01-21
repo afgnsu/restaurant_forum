@@ -26,7 +26,6 @@
       <%= simple_format @restaurant.description %>
       <%= link_to "Dashboard", dashboard_restaurant_path, class: "btn btn-primary" %>
       <%= render "shared/favorite", restaurant: @restaurant %>
-      <%= render "shared/like", restaurant: @restaurant %>
     </div>
 
     <div class="clearfix"></div>

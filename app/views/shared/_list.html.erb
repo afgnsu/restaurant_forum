@@ -12,7 +12,6 @@
             <p class="label label-default"><%= restaurant.category.name %></p> <br><br>
             <p><%= truncate(restaurant.description, length: 40)%></p>
             <%= render "shared/favorite", restaurant: restaurant %>
-            <%= render "shared/like", restaurant: restaurant %>
         </div>
       </div>        
     </div>
