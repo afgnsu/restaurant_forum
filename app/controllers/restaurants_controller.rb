@@ -20,6 +20,7 @@ class RestaurantsController < ApplicationController
   end
 
   def ranking
+    @restaurants = Restaurant.order(favorites_count: :desc).limit(10)
   end
 
   def favorite
