@@ -1,32 +1,31 @@
-<div class="container">
-  <h1>Top 10 人氣餐廳 <small>(收藏數最高)</small></h1>
 
-  <div class="row">
-    
-    <% @restaurants.each do |restaurant| %>
-  
+<h1>Top 10 人氣餐廳 <small>(收藏數最高)</small></h1>
+
+<hr>
+
+<div class="row">
+  <% @restaurants.each do |restaurant| %>
+
+    <div class="media">   
       <div class="col-md-2">
-        <br><br>
-        <% if restaurant.image? %>
-          <%= restaurant.image %>
-        <% else %>
-          <img src="https://api.fnkr.net/testimg/320x180/00CED1/FFF/?text=bistro" class="img-responsive">
-        <% end %>
-      </div><br>
-    
-      <div class="col-md-8">
-        <h4> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h4>
-        <p><%= restaurant.description %></p>
-        <%= link_to fa_icon("cutlery 2x"), restaurant_path(restaurant) %> &nbsp;
-        <%= render "shared/favorite", restaurant: restaurant %>
+        <div class="media-left"> 
+          <% if restaurant.image? %>
+            <%= restaurant.image %>
+          <% else %>
+            <img src="https://api.fnkr.net/testimg/320x180/a3dfa1/FFF/?text=image" class="media-object img-responsive">
+          <% end %>
+        </div>
       </div>
-
-      <div class="clearfix"></div>
-
-      <hr>
-    
-    <% end %>
-
-  </div>
-
+          
+      <div class="col-md-10">
+        <div class="media-body">
+          <h4 class="media-heading"> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h4>
+          <p><%= restaurant.description %></p>
+          <%= link_to fa_icon("cutlery 2x"), restaurant_path(restaurant) %> &nbsp;
+          <%= render "shared/favorite", restaurant: restaurant %>
+        </div>
+      </div>    
+    </div>
+    <hr>      
+  <% end %>    
 </div>
