@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RestaurantForum</title>
+    <title>Eat & Comment</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,16 +9,16 @@
   </head>
 
   <body id="myPage">
-
-    <p class="notice"> <%= notice %> </p>
-    <p class="alert"> <%= alert %> </p>
     
     <div class="container">
       <%= render "shared/navbar" %>
+
+      <%= render "shared/flashes" %>
       
       <%= render "shared/nav-tabs" %>
-
+      
       <%= yield %>
+
     </div>
 
 
