@@ -27,7 +27,7 @@ body {
   display: inline-block;
 }
 
-.commented-restaurant {
+.my-restaurant {
   display: inline-block;
   text-align: center;
   font-weight: bold;
@@ -36,11 +36,7 @@ body {
 
 }
 
-.favorited-restaurant {
-  display: inline-block;
-  text-align: center;
+li.list-group-item {
   font-weight: bold;
   font-size: 1.2em;
-  margin: 13px;
-
 }
