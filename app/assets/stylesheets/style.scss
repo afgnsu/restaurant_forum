@@ -27,11 +27,20 @@ body {
   display: inline-block;
 }
 
-.my-restaurant {
+.commented-restaurant {
   display: inline-block;
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
-  margin: 17px;
+  margin: 13px;
+
+}
+
+.favorited-restaurant {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 13px;
 
 }

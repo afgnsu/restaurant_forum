@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments, dependent: :restrict_with_error
-  has_many :restaurants, through: :comments
+  has_many :commented_restaurants, through: :comments, source: :restaurant
 
   has_many :favorites, dependent: :destroy
   has_many :favorited_restaurants, through: :favorites, source: :restaurant
@@ -15,6 +15,9 @@ class User < ApplicationRecord
 
   has_many :followships, dependent: :destroy
   has_many :followings, through: :followships
+
+  has_many :inverse_followships, class_name: "Followship", foreign_key: "following_id"
+  has_many :followers, through: :inverse_followships, source: :user
 
   validates_presence_of :name
 
