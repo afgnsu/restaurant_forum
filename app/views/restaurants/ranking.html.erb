@@ -22,7 +22,8 @@
           <h4 class="media-heading"> <%= link_to restaurant.name, restaurant_path(restaurant) %> </h4>
           <p><%= restaurant.description %></p>
           <%= link_to fa_icon("cutlery 2x"), restaurant_path(restaurant) %> &nbsp;
-          <%= render "shared/favorite", restaurant: restaurant %>
+          <%= render "shared/favorite", restaurant: restaurant %> &nbsp;
+          <%= render "shared/like", restaurant: restaurant %>
         </div>
       </div>    
     </div>

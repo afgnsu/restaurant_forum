@@ -11,7 +11,8 @@
             <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
             <p class="label label-info"><%= restaurant.category.name %></p> <br><br>
             <p><%= truncate(restaurant.description, length: 40)%></p>
-            <%= render "shared/favorite", restaurant: restaurant %>
+            <%= render "shared/favorite", restaurant: restaurant %> &nbsp;
+            <%= render "shared/like", restaurant: restaurant %>
         </div>
       </div>        
     </div>
